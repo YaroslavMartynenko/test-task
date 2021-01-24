@@ -22,7 +22,8 @@ public class Department {
 
     private String departmentName;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "department_head_id")
     private Lector departmentHead;
 

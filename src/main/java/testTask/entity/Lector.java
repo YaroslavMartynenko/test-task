@@ -27,7 +27,8 @@ public class Lector {
     private Double salary;
 
     @ToString.Exclude
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     @JoinTable(name = "lector_department",
             joinColumns = @JoinColumn(name = "lector_id"),
             inverseJoinColumns = @JoinColumn(name = "department_id"))
